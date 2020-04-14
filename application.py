@@ -13,17 +13,15 @@ LEXERS = {
     'hs': 'haskell'
 }
 
-LEXER = __file__.split('.')[-1]
 
-
-def push_to_dpaste(to_paste):
+def push_to_dpaste(to_paste, extension):
     try:
         req = requests.post(
             "https://dpaste.org/api/",
             data={
                 "content": to_paste,
                 "format": "url",
-                "lexer": LEXERS[LEXER],
+                "lexer": LEXERS.get(extension, '_text'),
                 "expires": "604800"
             }
         )
@@ -38,21 +36,13 @@ def push_to_dpaste(to_paste):
         )
 
 
-class DpasteFileCommand(sublime_plugin.TextCommand):
+class DpasteCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
-        with open(__file__, 'r') as f:
-            to_paste = f.read()
-        push_to_dpaste(to_paste)
-
-
-
-class DpasteSelectionCommand(sublime_plugin.WindowCommand):
-
-    def run(self):
-        view = self.window.active_view()
-        selection = view.sel()
-        to_paste = '\n\n'.join(view.substr(x) for x in selection)
-        push_to_dpaste(to_paste)
+        selection = self.view.sel()
+        to_paste = '\n\n'.join(self.view.substr(x) for x in selection if not x.empty())
+        filename = self.view.file_name()
+        extension = filename.split('.')[-1]
+        push_to_dpaste(to_paste, extension)
   
 

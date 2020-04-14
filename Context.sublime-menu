@@ -1,11 +1,6 @@
 [
     {
-        "command": "dpaste_file",
-        "caption": "dpaste file"
-    },
-    {
-        "command": "dpaste_selection",
-        "caption": "dpaste selection"
+        "command": "dpaste",
+        "caption": "Paste code to dpaste"
     }
-
 ]
