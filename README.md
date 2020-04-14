@@ -9,6 +9,8 @@ cd ~/.config/sublime-text-3/Packages/
 git clone http://github.com/adder46/dpaster-sublime.git
 ```
 
+You may need to run `Package Control: Satisfy Dependencies`.
+
 ### Usage
 
 ```
