@@ -9,13 +9,9 @@ cd ~/.config/sublime-text-3/Packages/
 git clone http://github.com/adder46/dpaster-sublime.git
 ```
 
-You may need to run `Package Control: Satisfy Dependencies`.
-
 ### Usage
 
-```
 Select the text, right click (Context menu) -> Upload to dpaste
-Alternatively, you can use a shortcut: `CTRL + ALT + SHIFT + D.
-```
+Alternatively, you can use a shortcut: `CTRL + ALT + SHIFT + D`.
 
 **NOTE**: To add more lexers, simply edit the `application.py` file (`LEXERS`).
