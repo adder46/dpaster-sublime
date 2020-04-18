@@ -1,6 +1,6 @@
 # dpaster-sublime
 
-This is a plugin for Sublime Text 3 editor that interfaces with dpaste.org. It was written for my own needs but I thought others could make use of it, too.
+This is a plugin for Sublime Text editor that interfaces with dpaste.org. It was written for my own needs but I thought others could make use of it, too.
 
 ### Installation
 
